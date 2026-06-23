@@ -1,0 +1,181 @@
+using MySql.Data.MySqlClient;
+
+namespace DB_Repos;
+
+public class UserRepository
+{
+    // AUTH
+    /// Login: cocokkan username+password dari tabel users.
+    /// Mengembalikan objek User jika berhasil, null jika gagal.
+    /// Otomatis mencatat log LOGIN.
+    public User? Login(string username, string password)
+    {
+        using var conn = DatabaseConfig.GetConnection();
+        using var cmd = new MySqlCommand(
+            "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
+            "FROM users WHERE username = @u AND password = @p", conn);
+        cmd.Parameters.AddWithValue("@u", username);
+        cmd.Parameters.AddWithValue("@p", password);
+        using var r = cmd.ExecuteReader();
+        if (!r.Read()) return null;
+
+        var user = MapRow(r);
+        r.Close();
+
+        // Catat log login
+        CatatLogUser(conn, null, username, "LOGIN", $"Login sebagai {user.Role}", DateTime.Now);
+        return user;
+    }
+    // READ
+    public List<User> GetAll()
+    {
+        var list = new List<User>();
+        using var conn = DatabaseConfig.GetConnection();
+        using var cmd = new MySqlCommand(
+            "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
+            "FROM users ORDER BY username", conn);
+        using var r = cmd.ExecuteReader();
+        while (r.Read()) list.Add(MapRow(r));
+        return list;
+    }
+    public User? GetByUsername(string username)
+    {
+        using var conn = DatabaseConfig.GetConnection();
+        using var cmd = new MySqlCommand(
+            "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
+            "FROM users WHERE username = @u", conn);
+        cmd.Parameters.AddWithValue("@u", username);
+        using var r = cmd.ExecuteReader();
+        return r.Read() ? MapRow(r) : null;
+    }
+    public List<User> GetByRole(string role)
+    {
+        var list = new List<User>();
+        using var conn = DatabaseConfig.GetConnection();
+        using var cmd = new MySqlCommand(
+            "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
+            "FROM users WHERE role = @role ORDER BY username", conn);
+        cmd.Parameters.AddWithValue("@role", role);
+        using var r = cmd.ExecuteReader();
+        while (r.Read()) list.Add(MapRow(r));
+        return list;
+    }
+    // CREATE
+    /// Daftarkan user baru. Throws jika username sudah ada.
+    public void Tambah(User user, string olehSiapa)
+    {
+        using var conn = DatabaseConfig.GetConnection();
+        using var tx = conn.BeginTransaction();
+        try
+        {
+            // Cek duplikat
+            using var chk = new MySqlCommand(
+                "SELECT COUNT(*) FROM users WHERE username = @u", conn, tx);
+            chk.Parameters.AddWithValue("@u", user.Username);
+            if (Convert.ToInt32(chk.ExecuteScalar()) > 0)
+                throw new Exception($"Username '{user.Username}' sudah digunakan.");
+
+            var now = DateTime.Now;
+            using var cmd = new MySqlCommand(
+                "INSERT INTO users (username, password, nomor_identitas, email, role, tanggal_dibuat) " +
+                "VALUES (@u, @p, @ni, @e, @r, @tgl)", conn, tx);
+            cmd.Parameters.AddWithValue("@u", user.Username);
+            cmd.Parameters.AddWithValue("@p", user.Password);
+            cmd.Parameters.AddWithValue("@ni", (object?)user.NomorIdentitas ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@e", (object?)user.Email ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@r", user.Role);
+            cmd.Parameters.AddWithValue("@tgl", now);
+            cmd.ExecuteNonQuery();
+
+            CatatLogUser(conn, tx, user.Username, "DAFTAR",
+                $"User '{user.Username}' didaftarkan oleh {olehSiapa}", now);
+
+            tx.Commit();
+        }
+        catch
+        {
+            tx.Rollback();
+            throw;
+        }
+    }
+    // UPDATE
+    /// Update data user (kecuali username yang merupakan PK).
+    public void Update(User user, string olehSiapa)
+    {
+        using var conn = DatabaseConfig.GetConnection();
+        using var tx = conn.BeginTransaction();
+        try
+        {
+            using var cmd = new MySqlCommand(
+                "UPDATE users SET password=@p, nomor_identitas=@ni, email=@e, role=@r " +
+                "WHERE username=@u", conn, tx);
+            cmd.Parameters.AddWithValue("@p", user.Password);
+            cmd.Parameters.AddWithValue("@ni", (object?)user.NomorIdentitas ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@e", (object?)user.Email ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@r", user.Role);
+            cmd.Parameters.AddWithValue("@u", user.Username);
+            cmd.ExecuteNonQuery();
+
+            CatatLogUser(conn, tx, user.Username, "DIUBAH",
+                $"Data user '{user.Username}' diubah oleh {olehSiapa}", DateTime.Now);
+
+            tx.Commit();
+        }
+        catch
+        {
+            tx.Rollback();
+            throw;
+        }
+    }
+    // DELETE
+    public void Hapus(string username, string olehSiapa)
+    {
+        using var conn = DatabaseConfig.GetConnection();
+        using var tx = conn.BeginTransaction();
+        try
+        {
+            // Log dulu sebelum hapus (FK ON DELETE SET NULL di log_user)
+            CatatLogUser(conn, tx, username, "DIHAPUS",
+                $"User '{username}' dihapus oleh {olehSiapa}", DateTime.Now);
+
+            using var cmd = new MySqlCommand(
+                "DELETE FROM users WHERE username = @u", conn, tx);
+            cmd.Parameters.AddWithValue("@u", username);
+            cmd.ExecuteNonQuery();
+
+            tx.Commit();
+        }
+        catch
+        {
+            tx.Rollback();
+            throw;
+        }
+    }
+    // HELPERS
+    private static User MapRow(MySqlDataReader r) => new()
+    {
+        Username = r.GetString("username"),
+        Password = r.GetString("password"),
+        NomorIdentitas = r.IsDBNull(r.GetOrdinal("nomor_identitas")) ? null : r.GetString("nomor_identitas"),
+        Email = r.IsDBNull(r.GetOrdinal("email")) ? null : r.GetString("email"),
+        Role = r.GetString("role"),
+        TanggalDibuat = r.IsDBNull(r.GetOrdinal("tanggal_dibuat")) ? null : r.GetDateTime("tanggal_dibuat"),
+    };
+    internal static void CatatLogUser(
+        MySqlConnection conn, MySqlTransaction? tx,
+        string username, string aksi, string keterangan, DateTime waktu)
+    {
+        using var cmd = tx != null
+            ? new MySqlCommand(
+                "INSERT INTO log_user (username, waktu, aksi, keterangan) VALUES (@u, @w, @a, @k)",
+                conn, tx)
+            : new MySqlCommand(
+                "INSERT INTO log_user (username, waktu, aksi, keterangan) VALUES (@u, @w, @a, @k)",
+                conn);
+        cmd.Parameters.AddWithValue("@u", username);
+        cmd.Parameters.AddWithValue("@w", waktu);
+        cmd.Parameters.AddWithValue("@a", aksi);
+        cmd.Parameters.AddWithValue("@k", keterangan);
+        cmd.ExecuteNonQuery();
+    }
+}
