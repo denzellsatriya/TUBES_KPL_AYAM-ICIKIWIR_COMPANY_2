@@ -2,14 +2,25 @@ using MySql.Data.MySqlClient;
 
 namespace DB_Repos;
 
-public class BukuRepository
+public sealed class BukuRepository
 {
+    private static readonly Lazy<BukuRepository> _instance = new(() => new BukuRepository());
+
+    public static BukuRepository Instance => _instance.Value;
+
+    private BukuRepository()
+    {
+    }
+
+    // ─────────────────────────────────────────────
     // READ
-    /// Ambil semua buku.
+    // ─────────────────────────────────────────────
+
+    /// <summary>Ambil semua buku.</summary>
     public List<Buku> GetAll()
     {
         var list = new List<Buku>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, judul, status, tanggal_pinjam, tanggal_dibuat FROM buku ORDER BY id", conn);
         using var reader = cmd.ExecuteReader();
@@ -18,10 +29,10 @@ public class BukuRepository
         return list;
     }
 
-    /// Cari buku berdasarkan ID.
+    /// <summary>Cari buku berdasarkan ID.</summary>
     public Buku? GetById(int id)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, judul, status, tanggal_pinjam, tanggal_dibuat FROM buku WHERE id = @id", conn);
         cmd.Parameters.AddWithValue("@id", id);
@@ -29,11 +40,11 @@ public class BukuRepository
         return reader.Read() ? MapRow(reader) : null;
     }
 
-    /// Cari buku berdasarkan kata kunci judul.
+    /// <summary>Cari buku berdasarkan kata kunci judul (LIKE %keyword%).</summary>
     public List<Buku> Cari(string keyword)
     {
         var list = new List<Buku>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, judul, status, tanggal_pinjam, tanggal_dibuat FROM buku " +
             "WHERE judul LIKE @kw ORDER BY id", conn);
@@ -44,11 +55,11 @@ public class BukuRepository
         return list;
     }
 
-    /// Ambil buku berdasarkan status (0=Tersedia, 1=Dipinjam, 2=Hilang).
+    /// <summary>Ambil buku berdasarkan status (0=Tersedia, 1=Dipinjam, 2=Hilang).</summary>
     public List<Buku> GetByStatus(int status)
     {
         var list = new List<Buku>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, judul, status, tanggal_pinjam, tanggal_dibuat FROM buku " +
             "WHERE status = @status ORDER BY id", conn);
@@ -58,12 +69,18 @@ public class BukuRepository
             list.Add(MapRow(reader));
         return list;
     }
+
+    // ─────────────────────────────────────────────
     // CREATE
+    // ─────────────────────────────────────────────
+
+    /// <summary>
     /// Tambah buku baru dan catat log DITAMBAHKAN.
     /// Mengembalikan ID buku yang baru dibuat.
+    /// </summary>
     public int Tambah(string judul, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -94,11 +111,15 @@ public class BukuRepository
             throw;
         }
     }
+
+    // ─────────────────────────────────────────────
     // UPDATE
-    /// Update judul buku dan catat log DIUBAH.
+    // ─────────────────────────────────────────────
+
+    /// <summary>Update judul buku dan catat log DIUBAH.</summary>
     public void UpdateJudul(int id, string judulBaru, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -119,10 +140,13 @@ public class BukuRepository
             throw;
         }
     }
+
+    /// <summary>
     /// Pinjam buku: set status=1, tanggal_pinjam=sekarang, catat log PINJAM.
+    /// </summary>
     public void Pinjam(int bukuId, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -148,10 +172,13 @@ public class BukuRepository
             throw;
         }
     }
+
+    /// <summary>
     /// Kembalikan buku: set status=0, tanggal_pinjam=NULL, catat log KEMBALI.
+    /// </summary>
     public void Kembalikan(int bukuId, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -176,10 +203,13 @@ public class BukuRepository
             throw;
         }
     }
+
+    /// <summary>
     /// Laporkan buku hilang: set status=2, catat log LAPOR_HILANG.
+    /// </summary>
     public void LaporHilang(int bukuId, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -204,11 +234,15 @@ public class BukuRepository
             throw;
         }
     }
+
+    // ─────────────────────────────────────────────
     // DELETE
-    /// Hapus buku dan semua log terkait, catat log DIHAPUS sebelum hapus.
+    // ─────────────────────────────────────────────
+
+    /// <summary>Hapus buku dan semua log terkait, catat log DIHAPUS sebelum hapus.</summary>
     public void Hapus(int id, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -232,7 +266,11 @@ public class BukuRepository
             throw;
         }
     }
+
+    // ─────────────────────────────────────────────
     // HELPERS
+    // ─────────────────────────────────────────────
+
     private static Buku MapRow(MySqlDataReader r) => new()
     {
         Id = r.GetInt32("id"),

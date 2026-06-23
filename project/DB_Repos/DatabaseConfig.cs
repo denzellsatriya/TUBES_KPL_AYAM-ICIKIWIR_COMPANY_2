@@ -2,22 +2,36 @@ using MySql.Data.MySqlClient;
 
 namespace DB_Repos;
 
-public static class DatabaseConfig
+/// <summary>
+/// Singleton untuk konfigurasi dan pembuatan koneksi database.
+/// Catatan: object DatabaseConfig hanya dibuat satu kali, tetapi koneksi MySQL tetap dibuat baru setiap query.
+/// Ini lebih aman daripada memakai satu koneksi global yang dipakai bersama-sama.
+/// </summary>
+public sealed class DatabaseConfig
 {
-    // Sesuaikan host, port, user, dan password dengan setup MySQL lokal Anda
+    private static readonly Lazy<DatabaseConfig> _instance = new(() => new DatabaseConfig());
+
+    public static DatabaseConfig Instance => _instance.Value;
+
     private const string Host = "localhost";
     private const int Port = 3306;
     private const string DatabaseName = "kpl_perpus";
     private const string DbUser = "root";
     private const string DbPassword = "";
 
-    public static string ConnectionString =>
+    private DatabaseConfig()
+    {
+    }
+
+    public string ConnectionString =>
         $"Server={Host};Port={Port};Database={DatabaseName};" +
         $"Uid={DbUser};Pwd={DbPassword};CharSet=utf8mb4;";
 
+    /// <summary>
     /// Membuka koneksi baru ke database kpl_perpus.
-    /// Caller bertanggung jawab menutup koneksi (gunakan 'using').
-    public static MySqlConnection GetConnection()
+    /// Caller bertanggung jawab menutup koneksi, gunakan using.
+    /// </summary>
+    public MySqlConnection GetConnection()
     {
         var conn = new MySqlConnection(ConnectionString);
         conn.Open();

@@ -21,12 +21,12 @@ partial class Form1
     private void InitializeComponent()
     {
         lblNamaPerpus = new Label();
-        lblUsername   = new Label();
-        lblPassword   = new Label();
-        txtUsername   = new TextBox();
-        txtPassword   = new TextBox();
-        btnLogin      = new Button();
-        btnRegister   = new Button();
+        lblUsername = new Label();
+        lblPassword = new Label();
+        txtUsername = new TextBox();
+        txtPassword = new TextBox();
+        btnLogin = new Button();
+        btnRegister = new Button();
         SuspendLayout();
 
         // Form

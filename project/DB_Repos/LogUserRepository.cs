@@ -2,13 +2,21 @@ using MySql.Data.MySqlClient;
 
 namespace DB_Repos;
 
-public class LogUserRepository
+public sealed class LogUserRepository
 {
-    /// Semua log user, terbaru di atas.
+    private static readonly Lazy<LogUserRepository> _instance = new(() => new LogUserRepository());
+
+    public static LogUserRepository Instance => _instance.Value;
+
+    private LogUserRepository()
+    {
+    }
+
+    /// <summary>Semua log user, terbaru di atas.</summary>
     public List<LogUser> GetAll()
     {
         var list = new List<LogUser>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, username, waktu, aksi, keterangan, message, timestamp " +
             "FROM log_user ORDER BY id DESC", conn);
@@ -16,11 +24,12 @@ public class LogUserRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
-    /// Log aktivitas untuk user tertentu.
+
+    /// <summary>Log aktivitas untuk user tertentu.</summary>
     public List<LogUser> GetByUsername(string username)
     {
         var list = new List<LogUser>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, username, waktu, aksi, keterangan, message, timestamp " +
             "FROM log_user WHERE username = @u ORDER BY id DESC", conn);
@@ -29,6 +38,7 @@ public class LogUserRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
+
     private static LogUser MapRow(MySqlDataReader r) => new()
     {
         Id = r.GetInt32("id"),

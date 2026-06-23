@@ -2,13 +2,21 @@ using MySql.Data.MySqlClient;
 
 namespace DB_Repos;
 
-public class LogBukuRepository
+public sealed class LogBukuRepository
 {
-    /// Semua log buku, terbaru di atas.
+    private static readonly Lazy<LogBukuRepository> _instance = new(() => new LogBukuRepository());
+
+    public static LogBukuRepository Instance => _instance.Value;
+
+    private LogBukuRepository()
+    {
+    }
+
+    /// <summary>Semua log buku, terbaru di atas.</summary>
     public List<LogBuku> GetAll()
     {
         var list = new List<LogBuku>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, buku_id, waktu, aksi, oleh_siapa, keterangan, message, timestamp, sumber_file " +
             "FROM log_buku ORDER BY id DESC", conn);
@@ -16,11 +24,12 @@ public class LogBukuRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
-    /// Log untuk satu buku tertentu.
+
+    /// <summary>Log untuk satu buku tertentu.</summary>
     public List<LogBuku> GetByBukuId(int bukuId)
     {
         var list = new List<LogBuku>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, buku_id, waktu, aksi, oleh_siapa, keterangan, message, timestamp, sumber_file " +
             "FROM log_buku WHERE buku_id = @bid ORDER BY id DESC", conn);
@@ -29,11 +38,12 @@ public class LogBukuRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
-    /// Log berdasarkan jenis aksi (DITAMBAHKAN, PINJAM, KEMBALI, LAPOR_HILANG, dst).
+
+    /// <summary>Log berdasarkan jenis aksi (DITAMBAHKAN, PINJAM, KEMBALI, LAPOR_HILANG, dst).</summary>
     public List<LogBuku> GetByAksi(string aksi)
     {
         var list = new List<LogBuku>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, buku_id, waktu, aksi, oleh_siapa, keterangan, message, timestamp, sumber_file " +
             "FROM log_buku WHERE aksi = @aksi ORDER BY id DESC", conn);
@@ -42,6 +52,7 @@ public class LogBukuRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
+
     private static LogBuku MapRow(MySqlDataReader r) => new()
     {
         Id = r.GetInt32("id"),

@@ -1,7 +1,7 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
-    "net10.0-windows": {
+    "net10.0-windows7.0": {
       "BouncyCastle.Cryptography/2.5.1": {
         "type": "package",
         "compile": {
@@ -365,29 +365,29 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net10.0-windows": [
+    "net10.0-windows7.0": [
       "DB_Repos >= 1.0.0",
       "Microsoft.VisualBasic >= 10.3.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Denzell\\.nuget\\packages\\": {},
+    "C:\\Users\\Naufal\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\TUBES FIX\\Perpustakaan_net10_updatedv2\\project\\GUI\\GUI.csproj",
+      "projectUniqueName": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\TUBES FIX\\Perpustakaan_net10_updatedv2\\project\\GUI\\GUI.csproj",
-      "packagesPath": "C:\\Users\\Denzell\\.nuget\\packages\\",
-      "outputPath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\TUBES FIX\\Perpustakaan_net10_updatedv2\\project\\GUI\\obj\\",
+      "projectPath": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\GUI.csproj",
+      "packagesPath": "C:\\Users\\Naufal\\.nuget\\packages\\",
+      "outputPath": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Denzell\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Naufal\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -399,12 +399,11 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net10.0-windows": {
-          "framework": "net10.0-windows7.0",
+        "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\TUBES FIX\\Perpustakaan_net10_updatedv2\\project\\DB_Repos\\KplPerpus.csproj": {
-              "projectPath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\TUBES FIX\\Perpustakaan_net10_updatedv2\\project\\DB_Repos\\KplPerpus.csproj"
+            "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\KplPerpus.csproj": {
+              "projectPath": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\KplPerpus.csproj"
             }
           }
         }
@@ -419,11 +418,10 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.300"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
-      "net10.0-windows": {
-        "framework": "net10.0-windows7.0",
+      "net10.0-windows7.0": {
         "targetAlias": "net10.0-windows",
         "dependencies": {
           "Microsoft.VisualBasic": {
@@ -450,7 +448,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

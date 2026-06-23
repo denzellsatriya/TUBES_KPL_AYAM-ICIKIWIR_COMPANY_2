@@ -26,19 +26,19 @@ partial class FormRegister
 
     private void InitializeComponent()
     {
-        lblJudul     = new Label();
-        lblUsername  = new Label();
-        lblPassword  = new Label();
+        lblJudul = new Label();
+        lblUsername = new Label();
+        lblPassword = new Label();
         lblKonfirmasi = new Label();
-        lblNim       = new Label();
-        lblEmail     = new Label();
-        txtUsername  = new TextBox();
-        txtPassword  = new TextBox();
+        lblNim = new Label();
+        lblEmail = new Label();
+        txtUsername = new TextBox();
+        txtPassword = new TextBox();
         txtKonfirmasi = new TextBox();
-        txtNim       = new TextBox();
-        txtEmail     = new TextBox();
-        btnDaftar    = new Button();
-        btnBatal     = new Button();
+        txtNim = new TextBox();
+        txtEmail = new TextBox();
+        btnDaftar = new Button();
+        btnBatal = new Button();
         SuspendLayout();
 
         // Form

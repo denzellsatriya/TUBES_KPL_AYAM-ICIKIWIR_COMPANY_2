@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "uB2xs4SD2IU=",
+  "dgSpecHash": "vKVrYjkN/vg=",
   "success": true,
-  "projectFilePath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\TUBES FIX\\Perpustakaan_net10_updatedv2\\project\\DB_Repos\\KplPerpus.csproj",
+  "projectFilePath": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\KplPerpus.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Denzell\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\mysql.data\\9.3.0\\mysql.data.9.3.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\system.security.permissions\\8.0.0\\system.security.permissions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
-    "C:\\Users\\Denzell\\.nuget\\packages\\zstdsharp.port\\0.8.5\\zstdsharp.port.0.8.5.nupkg.sha512"
+    "C:\\Users\\Naufal\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\mysql.data\\9.3.0\\mysql.data.9.3.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\system.configuration.configurationmanager\\8.0.0\\system.configuration.configurationmanager.8.0.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\system.diagnostics.eventlog\\8.0.0\\system.diagnostics.eventlog.8.0.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\system.security.cryptography.protecteddata\\8.0.0\\system.security.cryptography.protecteddata.8.0.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\system.security.permissions\\8.0.0\\system.security.permissions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\system.windows.extensions\\8.0.0\\system.windows.extensions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Naufal\\.nuget\\packages\\zstdsharp.port\\0.8.5\\zstdsharp.port.0.8.5.nupkg.sha512"
   ],
   "logs": []
 }

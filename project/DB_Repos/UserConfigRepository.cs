@@ -2,14 +2,25 @@ using MySql.Data.MySqlClient;
 
 namespace DB_Repos;
 
-public class UserConfigRepository
+public sealed class UserConfigRepository
 {
+    private static readonly Lazy<UserConfigRepository> _instance = new(() => new UserConfigRepository());
+
+    public static UserConfigRepository Instance => _instance.Value;
+
+    private UserConfigRepository()
+    {
+    }
+
+    // ─────────────────────────────────────────────
     // SETTINGS
-    /// Ambil semua settings sebagai dictionary key→value.
+    // ─────────────────────────────────────────────
+
+    /// <summary>Ambil semua settings sebagai dictionary key→value.</summary>
     public Dictionary<string, string> GetAllSettings()
     {
         var dict = new Dictionary<string, string>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT setting_key, setting_value FROM user_config_settings", conn);
         using var r = cmd.ExecuteReader();
@@ -17,7 +28,8 @@ public class UserConfigRepository
             dict[r.GetString("setting_key")] = r.GetString("setting_value");
         return dict;
     }
-    /// Baca PerpusSetting dari tabel user_config_settings.
+
+    /// <summary>Baca PerpusSetting dari tabel user_config_settings.</summary>
     public PerpusSetting GetPerpusSetting()
     {
         var dict = GetAllSettings();
@@ -29,10 +41,11 @@ public class UserConfigRepository
             NamaPerpustakaan = dict.TryGetValue("NamaPerpustakaan", out var np) ? np : "Perpustakaan",
         };
     }
-    /// Simpan satu setting (INSERT … ON DUPLICATE KEY UPDATE).
+
+    /// <summary>Simpan satu setting (INSERT … ON DUPLICATE KEY UPDATE).</summary>
     public void SetSetting(string key, string value)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "INSERT INTO user_config_settings (setting_key, setting_value) VALUES (@k, @v) " +
             "ON DUPLICATE KEY UPDATE setting_value = @v", conn);
@@ -40,7 +53,8 @@ public class UserConfigRepository
         cmd.Parameters.AddWithValue("@v", value);
         cmd.ExecuteNonQuery();
     }
-    /// Simpan seluruh PerpusSetting sekaligus.
+
+    /// <summary>Simpan seluruh PerpusSetting sekaligus.</summary>
     public void SavePerpusSetting(PerpusSetting s)
     {
         SetSetting("DurasiPinjamHari", s.DurasiPinjamHari.ToString());
@@ -48,11 +62,15 @@ public class UserConfigRepository
         SetSetting("DendaBukuHilang", s.DendaBukuHilang.ToString());
         SetSetting("NamaPerpustakaan", s.NamaPerpustakaan);
     }
+
+    // ─────────────────────────────────────────────
     // CONFIG ACCOUNTS
+    // ─────────────────────────────────────────────
+
     public List<UserConfigAccount> GetAllAccounts()
     {
         var list = new List<UserConfigAccount>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT id, account_type, username, password, role, nama " +
             "FROM user_config_accounts ORDER BY id", conn);
@@ -69,9 +87,10 @@ public class UserConfigRepository
             });
         return list;
     }
+
     public void TambahAccount(UserConfigAccount acc)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "INSERT INTO user_config_accounts (account_type, username, password, role, nama) " +
             "VALUES (@at, @u, @p, @r, @n)", conn);
@@ -82,9 +101,10 @@ public class UserConfigRepository
         cmd.Parameters.AddWithValue("@n", (object?)acc.Nama ?? DBNull.Value);
         cmd.ExecuteNonQuery();
     }
+
     public void HapusAccount(int id)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "DELETE FROM user_config_accounts WHERE id = @id", conn);
         cmd.Parameters.AddWithValue("@id", id);

@@ -1,0 +1,397 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\buku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\buku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\bukurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\bukurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formperpus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formperpus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formperpus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formperpus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formperpus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formperpus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formregister.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formregister.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\formstaff.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\formstaff.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\logbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\logbuku.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\logbukurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\logbukurepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\loguser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\loguser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\loguserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\loguserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\userconfigrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\userconfigrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\db_repos\\userconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11111111-1111-1111-1111-111111111111}|DB_Repos\\KplPerpus.csproj|solutionrelative:db_repos\\userconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|d:\\tugas_sem_4\\konstruksi perangkat lunak\\tubes\\tubes_kpl_ayam-icikiwir_company_2\\project\\gui\\gui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{22222222-2222-2222-2222-222222222222}|GUI\\GUI.csproj|solutionrelative:gui\\gui.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Buku.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\Buku.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\Buku.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\Buku.cs",
+              "RelativeToolTip": "DB_Repos\\Buku.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:24:54.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BukuRepository.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\BukuRepository.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\BukuRepository.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\BukuRepository.cs",
+              "RelativeToolTip": "DB_Repos\\BukuRepository.cs",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAQwCsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:24:49.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseConfig.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\DatabaseConfig.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\DatabaseConfig.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\DatabaseConfig.cs",
+              "RelativeToolTip": "DB_Repos\\DatabaseConfig.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:24:39.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\Form1.cs",
+              "RelativeDocumentMoniker": "GUI\\Form1.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\Form1.cs",
+              "RelativeToolTip": "GUI\\Form1.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAQwFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:24:11.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\Form1.Designer.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\Form1.Designer.cs",
+              "RelativeToolTip": "GUI\\Form1.Designer.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAQwF0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:24:08.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormPerpus.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormPerpus.cs",
+              "RelativeDocumentMoniker": "GUI\\FormPerpus.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormPerpus.cs",
+              "RelativeToolTip": "GUI\\FormPerpus.cs",
+              "ViewState": "AgIAANEAAAAAAAAAAAAQwPEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:23:57.215Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormPerpus.Designer.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormPerpus.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\FormPerpus.Designer.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormPerpus.Designer.cs",
+              "RelativeToolTip": "GUI\\FormPerpus.Designer.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAQwJYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:23:47.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormPerpus.cs [Design]",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormPerpus.cs",
+              "RelativeDocumentMoniker": "GUI\\FormPerpus.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormPerpus.cs [Design]",
+              "RelativeToolTip": "GUI\\FormPerpus.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:23:45.538Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FormRegister.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormRegister.cs",
+              "RelativeDocumentMoniker": "GUI\\FormRegister.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormRegister.cs",
+              "RelativeToolTip": "GUI\\FormRegister.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAQwEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:23:35.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormRegister.Designer.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormRegister.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\FormRegister.Designer.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormRegister.Designer.cs",
+              "RelativeToolTip": "GUI\\FormRegister.Designer.cs",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAQwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:23:28.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "FormStaff.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormStaff.cs",
+              "RelativeDocumentMoniker": "GUI\\FormStaff.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormStaff.cs",
+              "RelativeToolTip": "GUI\\FormStaff.cs",
+              "ViewState": "AgIAAD8BAAAAAAAAAAAqwIIBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:23:14.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FormStaff.Designer.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormStaff.Designer.cs",
+              "RelativeDocumentMoniker": "GUI\\FormStaff.Designer.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\FormStaff.Designer.cs",
+              "RelativeToolTip": "GUI\\FormStaff.Designer.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAAAGIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:22:40.303Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LogBuku.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogBuku.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\LogBuku.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogBuku.cs*",
+              "RelativeToolTip": "DB_Repos\\LogBuku.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:22:13.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LogBukuRepository.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogBukuRepository.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\LogBukuRepository.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogBukuRepository.cs",
+              "RelativeToolTip": "DB_Repos\\LogBukuRepository.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAQwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:22:04.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "LogUser.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogUser.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\LogUser.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogUser.cs",
+              "RelativeToolTip": "DB_Repos\\LogUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:21:55.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LogUserRepository.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogUserRepository.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\LogUserRepository.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\LogUserRepository.cs",
+              "RelativeToolTip": "DB_Repos\\LogUserRepository.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAQwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:21:51.439Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\UserRepository.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\UserRepository.cs*",
+              "RelativeToolTip": "DB_Repos\\UserRepository.cs*",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAANkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:21:18.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserConfigRepository.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\UserConfigRepository.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\UserConfigRepository.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\UserConfigRepository.cs",
+              "RelativeToolTip": "DB_Repos\\UserConfigRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:20:51.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UserConfig.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\UserConfig.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\UserConfig.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\UserConfig.cs",
+              "RelativeToolTip": "DB_Repos\\UserConfig.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAzwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:18:30.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\User.cs",
+              "RelativeDocumentMoniker": "DB_Repos\\User.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\DB_Repos\\User.cs",
+              "RelativeToolTip": "DB_Repos\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:18:05.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\Program.cs",
+              "RelativeDocumentMoniker": "GUI\\Program.cs",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\Program.cs*",
+              "RelativeToolTip": "GUI\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T23:17:06.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GUI.csproj",
+              "DocumentMoniker": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\GUI.csproj",
+              "RelativeDocumentMoniker": "GUI\\GUI.csproj",
+              "ToolTip": "D:\\TUGAS_SEM_4\\KONSTRUKSI PERANGKAT LUNAK\\TUBES\\TUBES_KPL_AYAM-ICIKIWIR_COMPANY_2\\project\\GUI\\GUI.csproj",
+              "RelativeToolTip": "GUI\\GUI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-23T17:38:32.443Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

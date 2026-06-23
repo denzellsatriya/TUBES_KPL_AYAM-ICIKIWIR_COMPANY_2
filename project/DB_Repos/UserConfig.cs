@@ -9,12 +9,16 @@ public class UserConfigAccount
     public string Role { get; set; } = string.Empty;
     public string? Nama { get; set; }
 }
+
 public class UserConfigSetting
 {
     public string SettingKey { get; set; } = string.Empty;
     public string SettingValue { get; set; } = string.Empty;
 }
+
+/// <summary>
 /// Helper class untuk akses settings yang sudah diketahui
+/// </summary>
 public class PerpusSetting
 {
     public int DurasiPinjamHari { get; set; } = 7;

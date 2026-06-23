@@ -1,6 +1,8 @@
 using DB_Repos;
 
 namespace GUI;
+
+/// <summary>
 /// Form untuk role Pengunjung:
 /// - Lihat daftar buku (semua / filter status)
 /// - Cari buku berdasarkan judul
@@ -8,17 +10,21 @@ namespace GUI;
 /// - Kembalikan buku (status 1 → 0)
 /// - Lapor buku hilang (status → 2)
 /// - Lihat riwayat peminjaman pribadi (dari log_buku)
+/// </summary>
 public partial class FormPerpus : Form
 {
     private readonly User _user;
-    private readonly BukuRepository _bukuRepo = new();
-    private readonly LogBukuRepository _logBukuRepo = new();
-    private readonly UserConfigRepository _configRepo = new();
+    private readonly BukuRepository _bukuRepo = BukuRepository.Instance;
+    private readonly LogBukuRepository _logBukuRepo = LogBukuRepository.Instance;
+    private readonly UserConfigRepository _configRepo = UserConfigRepository.Instance;
+
     private List<Buku> _bukuList = new();
+
     public FormPerpus(User user)
     {
         _user = user;
         InitializeComponent();
+
         try
         {
             var s = _configRepo.GetPerpusSetting();
@@ -34,7 +40,8 @@ public partial class FormPerpus : Form
 
         MuatBuku();
     }
-    // Muat / Refresh daftar buku
+
+    // ─── Muat / Refresh daftar buku ─────────────────────────────────────
     private void MuatBuku(string keyword = "", int statusFilter = -1)
     {
         try
@@ -55,6 +62,7 @@ public partial class FormPerpus : Form
                 TanggalPinjam = b.TanggalPinjam?.ToString("dd/MM/yyyy HH:mm") ?? "-",
                 TanggalDibuat = b.TanggalDibuat?.ToString("dd/MM/yyyy") ?? "-",
             }).ToList();
+
             AturKolomBuku();
         }
         catch (Exception ex)
@@ -63,6 +71,7 @@ public partial class FormPerpus : Form
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
+
     private void AturKolomBuku()
     {
         if (dgvBuku.Columns.Count == 0) return;
@@ -77,22 +86,27 @@ public partial class FormPerpus : Form
         dgvBuku.Columns["TanggalDibuat"].HeaderText = "Tgl. Masuk";
         dgvBuku.Columns["TanggalDibuat"].Width = 100;
     }
-    // Helper: ID buku yang dipilih di grid
+
+    // ─── Helper: ID buku yang dipilih di grid ───────────────────────────
     private int? IdBukuTerpilih()
     {
         if (dgvBuku.CurrentRow == null) return null;
         return (int)dgvBuku.CurrentRow.Cells["Id"].Value;
     }
-    // Button
+
+    // ─── Events ─────────────────────────────────────────────────────────
+
     private void btnCari_Click(object sender, EventArgs e)
     {
         int statusFilter = cmbFilter.SelectedIndex - 1; // -1=semua, 0=tersedia, 1=dipinjam, 2=hilang
         MuatBuku(txtCari.Text.Trim(), statusFilter);
     }
+
     private void txtCari_KeyDown(object sender, KeyEventArgs e)
     {
         if (e.KeyCode == Keys.Enter) btnCari_Click(sender, e);
     }
+
     private void btnPinjam_Click(object sender, EventArgs e)
     {
         int? id = IdBukuTerpilih();
@@ -126,6 +140,7 @@ public partial class FormPerpus : Form
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
+
     private void btnKembali_Click(object sender, EventArgs e)
     {
         int? id = IdBukuTerpilih();
@@ -159,6 +174,7 @@ public partial class FormPerpus : Form
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
+
     private void btnLaporHilang_Click(object sender, EventArgs e)
     {
         int? id = IdBukuTerpilih();
@@ -185,6 +201,7 @@ public partial class FormPerpus : Form
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
+
     private void btnRiwayat_Click(object sender, EventArgs e)
     {
         // Tampilkan riwayat log buku yang dilakukan oleh user ini
@@ -204,12 +221,14 @@ public partial class FormPerpus : Form
 
         lblInfo.Text = $"Menampilkan riwayat aktivitas untuk: {_user.Username}";
     }
+
     private void btnRefresh_Click(object sender, EventArgs e)
     {
         txtCari.Clear();
         cmbFilter.SelectedIndex = 0;
         MuatBuku();
     }
+
     private void btnLogout_Click(object sender, EventArgs e)
     {
         var konfirm = MessageBox.Show("Yakin ingin logout?", "Logout",

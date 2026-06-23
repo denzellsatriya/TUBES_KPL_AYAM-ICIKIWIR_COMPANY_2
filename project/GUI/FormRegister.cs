@@ -1,14 +1,21 @@
 using DB_Repos;
 
 namespace GUI;
+
+/// <summary>
+/// Form registrasi akun baru untuk Pengunjung.
+/// Dibuka dari halaman login.
+/// </summary>
 public partial class FormRegister : Form
 {
     private readonly UserRepository _userRepo;
+
     public FormRegister(UserRepository userRepo)
     {
         _userRepo = userRepo;
         InitializeComponent();
     }
+
     private void btnDaftar_Click(object sender, EventArgs e)
     {
         string username = txtUsername.Text.Trim();
@@ -40,8 +47,8 @@ public partial class FormRegister : Form
                 Username = username,
                 Password = password,
                 Role = "Pengunjung",
-                NomorIdentitas = string.IsNullOrEmpty(nim)? null : nim,
-                Email = string.IsNullOrEmpty(email)? null : email,
+                NomorIdentitas = string.IsNullOrEmpty(nim) ? null : nim,
+                Email = string.IsNullOrEmpty(email) ? null : email,
             };
 
             _userRepo.Tambah(user, username);
@@ -57,6 +64,7 @@ public partial class FormRegister : Form
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
+
     private void btnBatal_Click(object sender, EventArgs e)
     {
         this.Close();

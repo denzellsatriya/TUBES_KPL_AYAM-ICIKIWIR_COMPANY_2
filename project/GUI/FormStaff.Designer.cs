@@ -39,8 +39,8 @@ partial class FormStaff
     private void InitializeComponent()
     {
         var tabs = new TabControl { Dock = DockStyle.Fill };
-        var tabBuku    = new TabPage("📚 Buku");
-        var tabUser    = new TabPage("👤 User");
+        var tabBuku = new TabPage("📚 Buku");
+        var tabUser = new TabPage("👤 User");
         var tabLogBuku = new TabPage("📋 Log Buku");
         var tabLogUser = new TabPage("📋 Log User");
         var tabSetting = new TabPage("⚙️ Pengaturan");
@@ -53,18 +53,18 @@ partial class FormStaff
 
         // ── TAB BUKU ────────────────────────────────────────────────────────
         dgvBuku = BuatDGV();
-        txtCariBuku = new TextBox { Location = new Point(10,10), Size = new Size(260,26), PlaceholderText = "Cari judul..." };
+        txtCariBuku = new TextBox { Location = new Point(10, 10), Size = new Size(260, 26), PlaceholderText = "Cari judul..." };
         txtCariBuku.KeyDown += txtCariBuku_KeyDown;
         btnCariBuku = SmallBtn("Cari", 280, 10); btnCariBuku.Click += btnCariBuku_Click;
 
         txtJudulBaru = new TextBox { Location = new Point(10, 46), Size = new Size(260, 26), PlaceholderText = "Judul buku baru..." };
         btnTambahBuku = SmallBtn("+ Tambah", 280, 46); btnTambahBuku.Click += btnTambahBuku_Click;
-        btnEditJudul  = SmallBtn("✏ Edit",   385, 46); btnEditJudul.Click  += btnEditJudul_Click;
-        btnHapusBuku  = SmallBtn("🗑 Hapus",  490, 46); btnHapusBuku.Click  += btnHapusBuku_Click;
-        btnStaffKembali = SmallBtn("Kembali",  595, 46); btnStaffKembali.Click += btnStaffKembali_Click;
-        btnStaffHilang  = SmallBtn("Hilang",   700, 46); btnStaffHilang.Click  += btnStaffHilang_Click;
+        btnEditJudul = SmallBtn("✏ Edit", 385, 46); btnEditJudul.Click += btnEditJudul_Click;
+        btnHapusBuku = SmallBtn("🗑 Hapus", 490, 46); btnHapusBuku.Click += btnHapusBuku_Click;
+        btnStaffKembali = SmallBtn("Kembali", 595, 46); btnStaffKembali.Click += btnStaffKembali_Click;
+        btnStaffHilang = SmallBtn("Hilang", 700, 46); btnStaffHilang.Click += btnStaffHilang_Click;
 
-        var panBukuTop = new Panel { Dock = DockStyle.Top, Height = 82, Padding = new Padding(0,0,0,4) };
+        var panBukuTop = new Panel { Dock = DockStyle.Top, Height = 82, Padding = new Padding(0, 0, 0, 4) };
         panBukuTop.Controls.AddRange(new Control[] {
             txtCariBuku, btnCariBuku,
             txtJudulBaru, btnTambahBuku, btnEditJudul, btnHapusBuku,
@@ -82,7 +82,7 @@ partial class FormStaff
 
         txtUsernameBaru = new TextBox { Location = new Point(80, 10), Size = new Size(110, 24) };
         txtPasswordBaru = new TextBox { Location = new Point(275, 10), Size = new Size(110, 24), PasswordChar = '●' };
-        txtNimBaru  = new TextBox { Location = new Point(100, 46), Size = new Size(90, 24) };
+        txtNimBaru = new TextBox { Location = new Point(100, 46), Size = new Size(90, 24) };
         txtEmailBaru = new TextBox { Location = new Point(275, 46), Size = new Size(110, 24) };
         cmbRoleBaru = new ComboBox { Location = new Point(440, 46), Size = new Size(110, 24), DropDownStyle = ComboBoxStyle.DropDownList };
         cmbRoleBaru.Items.AddRange(new object[] { "Pengunjung", "Staff" });
@@ -120,9 +120,9 @@ partial class FormStaff
         var panSetting = new Panel { Dock = DockStyle.Fill, Padding = new Padding(20) };
 
         txtNamaPerpus = new TextBox { Location = new Point(200, 20), Size = new Size(300, 26) };
-        numDurasi     = new NumericUpDown { Location = new Point(200, 60), Size = new Size(120, 26), Minimum = 1, Maximum = 365, Value = 7 };
-        numDendaHari  = new NumericUpDown { Location = new Point(200,100), Size = new Size(120, 26), Minimum = 0, Maximum = 1000000, Value = 2500, DecimalPlaces = 0 };
-        numDendaHilang = new NumericUpDown { Location = new Point(200,140), Size = new Size(120, 26), Minimum = 0, Maximum = 10000000, Value = 50000, DecimalPlaces = 0 };
+        numDurasi = new NumericUpDown { Location = new Point(200, 60), Size = new Size(120, 26), Minimum = 1, Maximum = 365, Value = 7 };
+        numDendaHari = new NumericUpDown { Location = new Point(200, 100), Size = new Size(120, 26), Minimum = 0, Maximum = 1000000, Value = 2500, DecimalPlaces = 0 };
+        numDendaHilang = new NumericUpDown { Location = new Point(200, 140), Size = new Size(120, 26), Minimum = 0, Maximum = 10000000, Value = 50000, DecimalPlaces = 0 };
         btnSimpanSetting = new Button { Text = "💾 Simpan Pengaturan", Location = new Point(200, 185), Size = new Size(180, 34) };
         btnSimpanSetting.Click += btnSimpanSetting_Click;
 
@@ -173,13 +173,17 @@ partial class FormStaff
 
     private static Button SmallBtn(string text, int x, int y) => new Button
     {
-        Text = text, Location = new Point(x, y), Size = new Size(96, 26),
+        Text = text,
+        Location = new Point(x, y),
+        Size = new Size(96, 26),
         Font = new Font("Segoe UI", 8.5f),
     };
 
     private static Label Lab(string text, int x, int y) => new Label
     {
-        Text = text, Location = new Point(x, y), AutoSize = true,
+        Text = text,
+        Location = new Point(x, y),
+        AutoSize = true,
         Font = new Font("Segoe UI", 9),
     };
 }

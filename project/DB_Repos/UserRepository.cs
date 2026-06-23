@@ -2,15 +2,28 @@ using MySql.Data.MySqlClient;
 
 namespace DB_Repos;
 
-public class UserRepository
+public sealed class UserRepository
 {
+    private static readonly Lazy<UserRepository> _instance = new(() => new UserRepository());
+
+    public static UserRepository Instance => _instance.Value;
+
+    private UserRepository()
+    {
+    }
+
+    // ─────────────────────────────────────────────
     // AUTH
+    // ─────────────────────────────────────────────
+
+    /// <summary>
     /// Login: cocokkan username+password dari tabel users.
     /// Mengembalikan objek User jika berhasil, null jika gagal.
     /// Otomatis mencatat log LOGIN.
+    /// </summary>
     public User? Login(string username, string password)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
             "FROM users WHERE username = @u AND password = @p", conn);
@@ -26,11 +39,15 @@ public class UserRepository
         CatatLogUser(conn, null, username, "LOGIN", $"Login sebagai {user.Role}", DateTime.Now);
         return user;
     }
+
+    // ─────────────────────────────────────────────
     // READ
+    // ─────────────────────────────────────────────
+
     public List<User> GetAll()
     {
         var list = new List<User>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
             "FROM users ORDER BY username", conn);
@@ -38,9 +55,10 @@ public class UserRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
+
     public User? GetByUsername(string username)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
             "FROM users WHERE username = @u", conn);
@@ -48,10 +66,11 @@ public class UserRepository
         using var r = cmd.ExecuteReader();
         return r.Read() ? MapRow(r) : null;
     }
+
     public List<User> GetByRole(string role)
     {
         var list = new List<User>();
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var cmd = new MySqlCommand(
             "SELECT username, password, nomor_identitas, email, role, tanggal_dibuat " +
             "FROM users WHERE role = @role ORDER BY username", conn);
@@ -60,11 +79,15 @@ public class UserRepository
         while (r.Read()) list.Add(MapRow(r));
         return list;
     }
+
+    // ─────────────────────────────────────────────
     // CREATE
-    /// Daftarkan user baru. Throws jika username sudah ada.
+    // ─────────────────────────────────────────────
+
+    /// <summary>Daftarkan user baru. Throws jika username sudah ada.</summary>
     public void Tambah(User user, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -98,11 +121,15 @@ public class UserRepository
             throw;
         }
     }
+
+    // ─────────────────────────────────────────────
     // UPDATE
-    /// Update data user (kecuali username yang merupakan PK).
+    // ─────────────────────────────────────────────
+
+    /// <summary>Update data user (kecuali username yang merupakan PK).</summary>
     public void Update(User user, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -127,10 +154,14 @@ public class UserRepository
             throw;
         }
     }
+
+    // ─────────────────────────────────────────────
     // DELETE
+    // ─────────────────────────────────────────────
+
     public void Hapus(string username, string olehSiapa)
     {
-        using var conn = DatabaseConfig.GetConnection();
+        using var conn = DatabaseConfig.Instance.GetConnection();
         using var tx = conn.BeginTransaction();
         try
         {
@@ -151,7 +182,11 @@ public class UserRepository
             throw;
         }
     }
+
+    // ─────────────────────────────────────────────
     // HELPERS
+    // ─────────────────────────────────────────────
+
     private static User MapRow(MySqlDataReader r) => new()
     {
         Username = r.GetString("username"),
@@ -161,6 +196,7 @@ public class UserRepository
         Role = r.GetString("role"),
         TanggalDibuat = r.IsDBNull(r.GetOrdinal("tanggal_dibuat")) ? null : r.GetDateTime("tanggal_dibuat"),
     };
+
     internal static void CatatLogUser(
         MySqlConnection conn, MySqlTransaction? tx,
         string username, string aksi, string keterangan, DateTime waktu)

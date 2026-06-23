@@ -1,24 +1,29 @@
 using DB_Repos;
 
 namespace GUI;
+
+/// <summary>
 /// Form untuk role Staff/Admin:
 /// - Tab Buku: lihat semua buku, tambah, edit judul, hapus, pinjam, kembalikan, lapor hilang
 /// - Tab User: lihat, tambah, hapus user
 /// - Tab Log Buku: lihat riwayat aktivitas buku
 /// - Tab Log User: lihat riwayat login/aktivitas user
 /// - Tab Pengaturan: ubah nama perpus, durasi pinjam, denda
+/// </summary>
 public partial class FormStaff : Form
 {
     private readonly User _staffUser;
-    private readonly BukuRepository _bukuRepo = new();
-    private readonly UserRepository _userRepo = new();
-    private readonly LogBukuRepository _logBukuRepo = new();
-    private readonly LogUserRepository _logUserRepo = new();
-    private readonly UserConfigRepository _configRepo = new();
+    private readonly BukuRepository _bukuRepo = BukuRepository.Instance;
+    private readonly UserRepository _userRepo = UserRepository.Instance;
+    private readonly LogBukuRepository _logBukuRepo = LogBukuRepository.Instance;
+    private readonly LogUserRepository _logUserRepo = LogUserRepository.Instance;
+    private readonly UserConfigRepository _configRepo = UserConfigRepository.Instance;
+
     public FormStaff(User user)
     {
         _staffUser = user;
         InitializeComponent();
+
         try
         {
             var s = _configRepo.GetPerpusSetting();
@@ -26,12 +31,17 @@ public partial class FormStaff : Form
             IsiFormulirSetting(s);
         }
         catch { }
+
         MuatBuku();
         MuatUser();
         MuatLogBuku();
         MuatLogUser();
     }
+
+    // ════════════════════════════════════════════════════════════════════
     // TAB BUKU
+    // ════════════════════════════════════════════════════════════════════
+
     private void MuatBuku(string keyword = "")
     {
         try
@@ -43,16 +53,18 @@ public partial class FormStaff : Form
             dgvBuku.DataSource = null;
             dgvBuku.DataSource = list.Select(b => new
             {
-                b.Id, b.Judul,
+                b.Id,
+                b.Judul,
                 Status = b.StatusLabel,
                 TanggalPinjam = b.TanggalPinjam?.ToString("dd/MM/yyyy HH:mm") ?? "-",
                 TanggalDibuat = b.TanggalDibuat?.ToString("dd/MM/yyyy") ?? "-",
             }).ToList();
 
-            AturKolom(dgvBuku, new[] { ("Id",45), ("Judul",280), ("Status",85), ("TanggalPinjam",130), ("TanggalDibuat",100) });
+            AturKolom(dgvBuku, new[] { ("Id", 45), ("Judul", 280), ("Status", 85), ("TanggalPinjam", 130), ("TanggalDibuat", 100) });
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnTambahBuku_Click(object sender, EventArgs e)
     {
         string judul = txtJudulBaru.Text.Trim();
@@ -74,6 +86,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnEditJudul_Click(object sender, EventArgs e)
     {
         int? id = IdDariGrid(dgvBuku);
@@ -94,6 +107,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnHapusBuku_Click(object sender, EventArgs e)
     {
         int? id = IdDariGrid(dgvBuku);
@@ -115,6 +129,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnStaffKembali_Click(object sender, EventArgs e)
     {
         int? id = IdDariGrid(dgvBuku);
@@ -128,6 +143,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnStaffHilang_Click(object sender, EventArgs e)
     {
         int? id = IdDariGrid(dgvBuku);
@@ -141,6 +157,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnCariBuku_Click(object sender, EventArgs e)
         => MuatBuku(txtCariBuku.Text.Trim());
 
@@ -148,7 +165,11 @@ public partial class FormStaff : Form
     {
         if (e.KeyCode == Keys.Enter) MuatBuku(txtCariBuku.Text.Trim());
     }
+
+    // ════════════════════════════════════════════════════════════════════
     // TAB USER
+    // ════════════════════════════════════════════════════════════════════
+
     private void MuatUser()
     {
         try
@@ -157,7 +178,10 @@ public partial class FormStaff : Form
             dgvUser.DataSource = null;
             dgvUser.DataSource = list.Select(u => new
             {
-                u.Username, u.Role, u.NomorIdentitas, u.Email,
+                u.Username,
+                u.Role,
+                u.NomorIdentitas,
+                u.Email,
                 TanggalDibuat = u.TanggalDibuat?.ToString("dd/MM/yyyy") ?? "-",
             }).ToList();
 
@@ -169,6 +193,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnTambahUser_Click(object sender, EventArgs e)
     {
         string username = txtUsernameBaru.Text.Trim();
@@ -203,6 +228,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnHapusUser_Click(object sender, EventArgs e)
     {
         if (dgvUser.CurrentRow == null)
@@ -231,7 +257,11 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
+    // ════════════════════════════════════════════════════════════════════
     // TAB LOG
+    // ════════════════════════════════════════════════════════════════════
+
     private void MuatLogBuku()
     {
         try
@@ -256,6 +286,7 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void MuatLogUser()
     {
         try
@@ -279,9 +310,14 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
     private void btnRefreshLogBuku_Click(object sender, EventArgs e) => MuatLogBuku();
     private void btnRefreshLogUser_Click(object sender, EventArgs e) => MuatLogUser();
+
+    // ════════════════════════════════════════════════════════════════════
     // TAB PENGATURAN
+    // ════════════════════════════════════════════════════════════════════
+
     private void IsiFormulirSetting(PerpusSetting s)
     {
         txtNamaPerpus.Text = s.NamaPerpustakaan;
@@ -289,6 +325,7 @@ public partial class FormStaff : Form
         numDendaHari.Value = s.DendaPerHari;
         numDendaHilang.Value = s.DendaBukuHilang;
     }
+
     private void btnSimpanSetting_Click(object sender, EventArgs e)
     {
         try
@@ -314,7 +351,11 @@ public partial class FormStaff : Form
         }
         catch (Exception ex) { TampilError(ex); }
     }
+
+    // ════════════════════════════════════════════════════════════════════
     // HELPERS
+    // ════════════════════════════════════════════════════════════════════
+
     private static int? IdDariGrid(DataGridView dgv)
     {
         if (dgv.CurrentRow == null)
@@ -325,12 +366,14 @@ public partial class FormStaff : Form
         }
         return Convert.ToInt32(dgv.CurrentRow.Cells["Id"].Value);
     }
+
     private static void AturKolom(DataGridView dgv, (string name, int width)[] cols)
     {
         foreach (var (name, width) in cols)
             if (dgv.Columns.Contains(name))
                 dgv.Columns[name].Width = width;
     }
+
     private static void TampilError(Exception ex)
         => MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

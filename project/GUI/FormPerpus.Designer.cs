@@ -26,19 +26,19 @@ partial class FormPerpus
 
     private void InitializeComponent()
     {
-        lblInfo       = new Label();
-        txtCari       = new TextBox();
-        cmbFilter     = new ComboBox();
-        btnCari       = new Button();
-        btnRefresh    = new Button();
-        btnPinjam     = new Button();
-        btnKembali    = new Button();
+        lblInfo = new Label();
+        txtCari = new TextBox();
+        cmbFilter = new ComboBox();
+        btnCari = new Button();
+        btnRefresh = new Button();
+        btnPinjam = new Button();
+        btnKembali = new Button();
         btnLaporHilang = new Button();
-        btnRiwayat    = new Button();
-        btnLogout     = new Button();
-        dgvBuku       = new DataGridView();
-        panelTop      = new Panel();
-        panelBottom   = new Panel();
+        btnRiwayat = new Button();
+        btnLogout = new Button();
+        dgvBuku = new DataGridView();
+        panelTop = new Panel();
+        panelBottom = new Panel();
 
         SuspendLayout();
 
