@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "up3pp6l1qdI=",
+  "success": true,
+  "projectFilePath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\KPL_GUI\\project\\GUI\\GUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Denzell\\.nuget\\packages\\bcrypt.net-next\\4.2.0\\bcrypt.net-next.4.2.0.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\google.protobuf\\3.30.0\\google.protobuf.3.30.0.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\microsoft.visualbasic\\10.3.0\\microsoft.visualbasic.10.3.0.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\mysql.data\\9.3.0\\mysql.data.9.3.0.nupkg.sha512",
+    "C:\\Users\\Denzell\\.nuget\\packages\\zstdsharp.port\\0.8.5\\zstdsharp.port.0.8.5.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.VisualBasic will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\KPL_GUI\\project\\GUI\\GUI.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\DENZELL\\TELKOM\\SEMESTER 4\\KPL\\KPL_GUI\\project\\GUI\\GUI.csproj",
+      "libraryId": "Microsoft.VisualBasic",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    }
+  ]
+}
