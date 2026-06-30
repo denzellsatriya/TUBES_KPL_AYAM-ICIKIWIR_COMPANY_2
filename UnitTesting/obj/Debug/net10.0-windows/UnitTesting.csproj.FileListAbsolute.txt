@@ -1,0 +1,10 @@
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\bin\Debug\net10.0-windows\.msCoverageExtensionSourceRootsMapping_UnitTesting
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\bin\Debug\net10.0-windows\.msCoverageSourceRootsMapping_UnitTesting
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.csproj.AssemblyReference.cache
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.GeneratedMSBuildEditorConfig.editorconfig
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.gentestingplatformentrypointinputcache.cache
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.genautoregisteredextensionsinputcache.cache
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.AssemblyInfoInputs.cache
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.AssemblyInfo.cs
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.csproj.CoreCompileInputs.cache
+D:\DENZELL\TELKOM\SEMESTER 4\KPL\KPL_GUI\project\UnitTesting\obj\Debug\net10.0-windows\UnitTesting.sourcelink.json
